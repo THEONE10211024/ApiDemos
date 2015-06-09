@@ -1,19 +1,2 @@
-The API Demos application includes a variety of small applications 
-that illustrate the use of various Android APIs. It includes samples of:
-  - Notifications
-  - Alarms
-  - Progress Dialogs
-  - Intents
-  - Menus
-  - Search
-  - Persistent application state
-  - Preferences
-  - Background Services
-  - App Widgets
-  - Voice Recognition
-  - And many many more...
-
-Api demos is designed to use the compatibility library "android-support-v4.jar".
-It is available through the SDK Updater in the "Android Compatibility package".
-Once downloaded, copy the jar file into the ApiDemos project libs/ folder.
-(If using Eclipse, add it manually to the project build path).
+#google官方ApiDemo——完善的Android学习资料
+ApiDemo非常全面的介绍了Android开发中常见的Api使用方式。比如Activity、Fragment、Animation、Dialog、OS、Notification、多媒体、图片绘制、NFC、各种view等等，可谓一应俱全
