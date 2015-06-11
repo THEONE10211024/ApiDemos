@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.view.*;
 
 import java.io.ByteArrayOutputStream;
-
+//bitmap是bmp格式，本章介绍了如何将bmp转换成png和jpg
 public class CreateBitmap extends GraphicsActivity {
 
     @Override
@@ -59,10 +59,10 @@ public class CreateBitmap extends GraphicsActivity {
         private static Bitmap codec(Bitmap src, Bitmap.CompressFormat format,
                                     int quality) {
             ByteArrayOutputStream os = new ByteArrayOutputStream();
-            src.compress(format, quality, os);
+            src.compress(format, quality, os);//对bitmap进行压缩，format是格式如png，quality是压缩质量，os是压缩后数据存储byte数组
 
             byte[] array = os.toByteArray();
-            return BitmapFactory.decodeByteArray(array, 0, array.length);
+            return BitmapFactory.decodeByteArray(array, 0, array.length);//压缩后的图片
         }
 
         public SampleView(Context context) {
@@ -74,6 +74,7 @@ public class CreateBitmap extends GraphicsActivity {
 
             mBitmaps = new Bitmap[6];
             // these three are initialized with colors[]
+            //bitmap的几种存储格式
             mBitmaps[0] = Bitmap.createBitmap(colors, 0, STRIDE, WIDTH, HEIGHT,
                                               Bitmap.Config.ARGB_8888);
             mBitmaps[1] = Bitmap.createBitmap(colors, 0, STRIDE, WIDTH, HEIGHT,
@@ -99,8 +100,8 @@ public class CreateBitmap extends GraphicsActivity {
             mJPEG = new Bitmap[mBitmaps.length];
             mPNG = new Bitmap[mBitmaps.length];
             for (int i = 0; i < mBitmaps.length; i++) {
-                mJPEG[i] = codec(mBitmaps[i], Bitmap.CompressFormat.JPEG, 80);
-                mPNG[i] = codec(mBitmaps[i], Bitmap.CompressFormat.PNG, 0);
+                mJPEG[i] = codec(mBitmaps[i], Bitmap.CompressFormat.JPEG, 80);//有损压缩
+                mPNG[i] = codec(mBitmaps[i], Bitmap.CompressFormat.PNG, 0);//无损压缩
             }
         }
 

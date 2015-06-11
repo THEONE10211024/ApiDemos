@@ -32,7 +32,7 @@ public class ColorMatrixSample extends GraphicsActivity {
     }
 
     private static class SampleView extends View {
-        private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);//没有锯齿
         private Bitmap mBitmap;
         private float mAngle;
 
@@ -51,17 +51,27 @@ public class ColorMatrixSample extends GraphicsActivity {
                    0, 0, 2, 0, db,
                    0, 0, 0, 1, da });
         }
-
+        /**
+         * 变换+移动
+         * @param cm
+         * @param contrast
+         */
         private static void setContrast(ColorMatrix cm, float contrast) {
             float scale = contrast + 1.f;
                float translate = (-.5f * scale + .5f) * 255.f;
+               //ColorMatrix是一个5*4的矩阵，set方法是给该矩阵赋值。
+               //当用到(r,g,b,a)变换时，r' = scale*r+translate; b' = scale*b + translate;g = g'*scale+translate,a'=a;
             cm.set(new float[] {
                    scale, 0, 0, 0, translate,
                    0, scale, 0, 0, translate,
                    0, 0, scale, 0, translate,
                    0, 0, 0, 1, 0 });
         }
-
+        /**
+         * 仅移动
+         * @param cm
+         * @param contrast
+         */
         private static void setContrastTranslateOnly(ColorMatrix cm, float contrast) {
             float scale = contrast + 1.f;
                float translate = (-.5f * scale + .5f) * 255.f;
@@ -71,7 +81,11 @@ public class ColorMatrixSample extends GraphicsActivity {
                    0, 0, 1, 0, translate,
                    0, 0, 0, 1, 0 });
         }
-
+        /**
+         * 仅变换
+         * @param cm
+         * @param contrast
+         */
         private static void setContrastScaleOnly(ColorMatrix cm, float contrast) {
             float scale = contrast + 1.f;
                float translate = (-.5f * scale + .5f) * 255.f;
@@ -87,10 +101,10 @@ public class ColorMatrixSample extends GraphicsActivity {
             float x = 20;
             float y = 20;
 
-            canvas.drawColor(Color.WHITE);
+            canvas.drawColor(Color.WHITE);//背景色白色
 
             paint.setColorFilter(null);
-            canvas.drawBitmap(mBitmap, x, y, paint);
+            canvas.drawBitmap(mBitmap, x, y, paint);//在（x,y）处绘制一个mBitmap
 
             ColorMatrix cm = new ColorMatrix();
 
@@ -101,21 +115,21 @@ public class ColorMatrixSample extends GraphicsActivity {
 
             //convert our animated angle [-180...180] to a contrast value of [-1..1]
             float contrast = mAngle / 180.f;
-
+            //scale+translate
             setContrast(cm, contrast);
             paint.setColorFilter(new ColorMatrixColorFilter(cm));
             canvas.drawBitmap(mBitmap, x + mBitmap.getWidth() + 10, y, paint);
-
+            //scale
             setContrastScaleOnly(cm, contrast);
             paint.setColorFilter(new ColorMatrixColorFilter(cm));
             canvas.drawBitmap(mBitmap, x, y + mBitmap.getHeight() + 10, paint);
-
+            //translate
             setContrastTranslateOnly(cm, contrast);
             paint.setColorFilter(new ColorMatrixColorFilter(cm));
             canvas.drawBitmap(mBitmap, x, y + 2*(mBitmap.getHeight() + 10),
                               paint);
 
-            invalidate();
+            invalidate();//导致重绘
         }
     }
 }
