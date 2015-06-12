@@ -57,9 +57,9 @@ public class MeasureText extends GraphicsActivity {
             setFocusable(true);
 
             mPaint = new Paint();
-            mPaint.setAntiAlias(true);
+            mPaint.setAntiAlias(true);//防锯齿
             mPaint.setStrokeWidth(5);
-            mPaint.setStrokeCap(Paint.Cap.ROUND);
+            mPaint.setStrokeCap(Paint.Cap.ROUND);//设置画笔形状，影响画笔始末端的形状
             mPaint.setTextSize(64);
             mPaint.setTypeface(Typeface.create(Typeface.SERIF,
                                                Typeface.ITALIC));
@@ -100,10 +100,10 @@ public class MeasureText extends GraphicsActivity {
         @Override protected void onDraw(Canvas canvas) {
             canvas.drawColor(Color.WHITE);
 
-            canvas.translate(mOriginX, mOriginY);
+            canvas.translate(mOriginX, mOriginY);//移动到（mOriginX, mOriginY），以该点为原点进行绘制
 
             showText(canvas, "Measure", Paint.Align.LEFT);
-            canvas.translate(0, 80);
+            canvas.translate(0, 80);//由于没有调用restore(),因此在（mOriginX, mOriginY）基础上向下平移80px。
             showText(canvas, "wiggy!", Paint.Align.CENTER);
             canvas.translate(0, 80);
             showText(canvas, "Text", Paint.Align.RIGHT);

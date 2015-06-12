@@ -48,7 +48,7 @@ public class DensityActivity extends Activity {
         final LayoutInflater li = (LayoutInflater)getSystemService(
                 LAYOUT_INFLATER_SERVICE);
 
-        this.setTitle(R.string.density_title);
+        this.setTitle(R.string.density_title);//会根据不同的屏幕分辨率到不同的资源文件里取数据
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
 
@@ -85,7 +85,7 @@ public class DensityActivity extends Activity {
         addCanvasBitmap(layout, R.drawable.logo120dpi, true);
         addCanvasBitmap(layout, R.drawable.logo160dpi, true);
         addCanvasBitmap(layout, R.drawable.logo240dpi, true);
-        addLabelToRoot(root, "Prescaled bitmap");
+        addLabelToRoot(root, "Prescaled bitmap");//已经拉伸（scaled）过得图片
         addChildToRoot(root, layout);
 
         layout = new LinearLayout(this);
@@ -178,17 +178,18 @@ public class DensityActivity extends Activity {
                 + " w=" + d.getIntrinsicWidth() + " h=" + d.getIntrinsicHeight());
         view.setLayoutParams(new LinearLayout.LayoutParams(
                 d.getIntrinsicWidth()*2, d.getIntrinsicHeight()*2));
+        
         layout.addView(view);
     }
 
     private Bitmap loadAndPrintDpi(int id, boolean scale) {
         Bitmap bitmap;
         if (scale) {
-            bitmap = BitmapFactory.decodeResource(getResources(), id);
+            bitmap = BitmapFactory.decodeResource(getResources(), id);//允许拉伸
         } else {
             BitmapFactory.Options opts = new BitmapFactory.Options();
             opts.inScaled = false;
-            bitmap = BitmapFactory.decodeResource(getResources(), id, opts);
+            bitmap = BitmapFactory.decodeResource(getResources(), id, opts);//不允许拉伸
         }
         return bitmap;
     }

@@ -20,7 +20,7 @@ import android.content.Context;
 import android.graphics.*;
 import android.os.Bundle;
 import android.view.View;
-
+//以数组形式给定坐标，绘制点和直线
 public class DrawPoints extends GraphicsActivity {
 
     @Override
@@ -39,11 +39,12 @@ public class DrawPoints extends GraphicsActivity {
         private static final int Y = 1;
 
         private void buildPoints() {
-            final int ptCount = (SEGS + 1) * 2;
-            mPts = new float[ptCount * 2];
+            final int ptCount = (SEGS + 1) * 2;//ptCount == 66;
+            mPts = new float[ptCount * 2];//mPt size是132
 
             float value = 0;
-            final float delta = SIZE / SEGS;
+            final float delta = SIZE / SEGS;//9.375 偏移量，即每次移动多远
+            //这个for循环其实就是设定蓝色点的横纵坐标
             for (int i = 0; i <= SEGS; i++) {
                 mPts[i*4 + X] = SIZE - value;
                 mPts[i*4 + Y] = 0;
@@ -68,11 +69,11 @@ public class DrawPoints extends GraphicsActivity {
 
             paint.setColor(Color.RED);
             paint.setStrokeWidth(0);
-            canvas.drawLines(mPts, paint);
+            canvas.drawLines(mPts, paint);//画直线mPts形如[x0,y0,x1,y1,x2,y2,x3,y3....]分别在(x0,y0)和(x1,y1)、(x2,y3)和(x3,y3)之间画线
 
             paint.setColor(Color.BLUE);
             paint.setStrokeWidth(3);
-            canvas.drawPoints(mPts, paint);
+            canvas.drawPoints(mPts, paint);//画点mPts形如[x0,y0,x1,y1,x2,y2,x3,y3....]分别绘制(x0,y0)、(x1,y1)、(x2,y3)、(x3,y3)几个点
         }
     }
 }

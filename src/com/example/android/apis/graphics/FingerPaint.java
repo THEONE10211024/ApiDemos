@@ -23,7 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-
+//请用极限的思维理解move时候的绘制
 public class FingerPaint extends GraphicsActivity
         implements ColorPickerDialog.OnColorChangedListener {
 
@@ -35,7 +35,7 @@ public class FingerPaint extends GraphicsActivity
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
-        mPaint.setColor(0xFFFF0000);
+        mPaint.setColor(0xFFFF0000);//red
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -75,7 +75,7 @@ public class FingerPaint extends GraphicsActivity
         @Override
         protected void onSizeChanged(int w, int h, int oldw, int oldh) {
             super.onSizeChanged(w, h, oldw, oldh);
-            mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+            mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);//创建一个和该view一样大的bitmap，格式是ARGB_8888
             mCanvas = new Canvas(mBitmap);
         }
 
@@ -90,7 +90,11 @@ public class FingerPaint extends GraphicsActivity
 
         private float mX, mY;
         private static final float TOUCH_TOLERANCE = 4;
-
+        /**
+         * 开始点击之前，重置path
+         * @param x
+         * @param y
+         */
         private void touch_start(float x, float y) {
             mPath.reset();
             mPath.moveTo(x, y);
@@ -101,7 +105,7 @@ public class FingerPaint extends GraphicsActivity
             float dx = Math.abs(x - mX);
             float dy = Math.abs(y - mY);
             if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-                mPath.quadTo(mX, mY, (x + mX)/2, (y + mY)/2);
+                mPath.quadTo(mX, mY, (x + mX)/2, (y + mY)/2);//两点之间描绘一条二次贝塞尔曲线
                 mX = x;
                 mY = y;
             }
