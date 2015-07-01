@@ -34,7 +34,7 @@ import android.os.RemoteException;
 /**
  * This is an example of service that will update its status bar balloon 
  * every 5 seconds for a minute.
- * 
+ * 条件变量的使用（Condition）
  */
 public class NotifyingService extends Service {
     
