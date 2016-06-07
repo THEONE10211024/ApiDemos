@@ -64,7 +64,7 @@ public class ActionBarDisplayOptions extends Activity implements View.OnClickLis
         bar.addTab(bar.newTab().setText("Tab 2").setTabListener(this));
         bar.addTab(bar.newTab().setText("Tab 3").setTabListener(this));
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1);
         adapter.add("Item 1");
         adapter.add("Item 2");

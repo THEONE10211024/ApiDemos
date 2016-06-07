@@ -41,19 +41,19 @@ public class FragmentNestingTabs extends Activity {
 
         bar.addTab(bar.newTab()
                 .setText("Menus")
-                .setTabListener(new TabListener<FragmentMenuFragment>(
+                .setTabListener(new TabListener<>(
                         this, "menus", FragmentMenuFragment.class)));
         bar.addTab(bar.newTab()
                 .setText("Args")
-                .setTabListener(new TabListener<FragmentArgumentsFragment>(
+                .setTabListener(new TabListener<>(
                         this, "args", FragmentArgumentsFragment.class)));
         bar.addTab(bar.newTab()
                 .setText("Stack")
-                .setTabListener(new TabListener<FragmentStackFragment>(
+                .setTabListener(new TabListener<>(
                         this, "stack", FragmentStackFragment.class)));
         bar.addTab(bar.newTab()
                 .setText("Tabs")
-                .setTabListener(new TabListener<FragmentTabsFragment>(
+                .setTabListener(new TabListener<>(
                         this, "tabs", FragmentTabsFragment.class)));
 
         if (savedInstanceState != null) {
