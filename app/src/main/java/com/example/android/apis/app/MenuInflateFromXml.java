@@ -80,7 +80,7 @@ public class MenuInflateFromXml extends Activity {
         layout.setOrientation(LinearLayout.VERTICAL);
         
         // Create the spinner to allow the user to choose a menu XML
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, sMenuExampleNames); 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinner = new Spinner(this);

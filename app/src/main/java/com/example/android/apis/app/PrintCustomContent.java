@@ -448,7 +448,7 @@ public class PrintCustomContent extends ListActivity {
                 }
 
                 private PageRange[] computeWrittenPageRanges(SparseIntArray writtenPages) {
-                    List<PageRange> pageRanges = new ArrayList<PageRange>();
+                    List<PageRange> pageRanges = new ArrayList<>();
 
                     int start = -1;
                     int end = -1;
@@ -491,7 +491,7 @@ public class PrintCustomContent extends ListActivity {
         String[] champions = getResources().getStringArray(R.array.motogp_champions);
         String[] constructors = getResources().getStringArray(R.array.motogp_constructors);
 
-        List<MotoGpStatItem> items = new ArrayList<MotoGpStatItem>();
+        List<MotoGpStatItem> items = new ArrayList<>();
 
         final int itemCount = years.length;
         for (int i = 0; i < itemCount; i++) {
@@ -521,7 +521,7 @@ public class PrintCustomContent extends ListActivity {
         }
 
         public List<MotoGpStatItem> cloneItems() {
-            return new ArrayList<MotoGpStatItem>(mItems);
+            return new ArrayList<>(mItems);
         }
 
         @Override

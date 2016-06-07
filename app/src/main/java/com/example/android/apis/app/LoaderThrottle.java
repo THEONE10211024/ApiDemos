@@ -189,7 +189,7 @@ public class LoaderThrottle extends Activity {
 
             // Create and initialize projection map for all columns.  This is
             // simply an identity mapping.
-            mNotesProjectionMap = new HashMap<String, String>();
+            mNotesProjectionMap = new HashMap<>();
             mNotesProjectionMap.put(MainTable._ID, MainTable._ID);
             mNotesProjectionMap.put(MainTable.COLUMN_NAME_DATA, MainTable.COLUMN_NAME_DATA);
         }

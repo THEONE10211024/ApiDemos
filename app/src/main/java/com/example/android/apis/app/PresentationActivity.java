@@ -105,7 +105,7 @@ public class PresentationActivity extends Activity
 
     // List of all currently visible presentations indexed by display id.
     private final SparseArray<DemoPresentation> mActivePresentations =
-            new SparseArray<DemoPresentation>();
+            new SparseArray<>();
 
     /**
      * Initialization of the Activity after it is first created.  Must at least
@@ -122,7 +122,7 @@ public class PresentationActivity extends Activity
             mSavedPresentationContents =
                     savedInstanceState.getSparseParcelableArray(PRESENTATION_KEY);
         } else {
-            mSavedPresentationContents = new SparseArray<DemoPresentationContents>();
+            mSavedPresentationContents = new SparseArray<>();
         }
 
         // Get the display manager service.
@@ -410,7 +410,7 @@ public class PresentationActivity extends Activity
                 s.setVisibility(View.GONE);
                 s.setAdapter(null);
             } else {
-                ArrayAdapter<String> modeAdapter = new ArrayAdapter<String>(mContext,
+                ArrayAdapter<String> modeAdapter = new ArrayAdapter<>(mContext,
                         android.R.layout.simple_list_item_1);
                 s.setVisibility(View.VISIBLE);
                 s.setAdapter(modeAdapter);
