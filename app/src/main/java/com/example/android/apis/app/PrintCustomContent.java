@@ -451,7 +451,7 @@ public class PrintCustomContent extends ListActivity {
                     List<PageRange> pageRanges = new ArrayList<PageRange>();
 
                     int start = -1;
-                    int end = -1;
+                    int end;
                     final int writtenPageCount = writtenPages.size();
                     for (int i = 0; i < writtenPageCount; i++) {
                         if (start < 0) {
