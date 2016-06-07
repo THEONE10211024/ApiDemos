@@ -40,8 +40,8 @@ public class Focus1 extends Activity {
                         "text/html", null);
 
         ListView listView = (ListView) findViewById(R.id.rssListView);
-        listView.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, 
-                new String[] {"Ars Technica", "Slashdot", "GameKult"}));
+        listView.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,
+                new String[]{"Ars Technica", "Slashdot", "GameKult"}));
     }
 }
