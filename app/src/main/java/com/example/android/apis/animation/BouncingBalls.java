@@ -57,7 +57,7 @@ public class BouncingBalls extends Activity {
         private static final int CYAN = 0xff80ffff;
         private static final int GREEN = 0xff80ff80;
 
-        public final ArrayList<ShapeHolder> balls = new ArrayList<ShapeHolder>();
+        public final ArrayList<ShapeHolder> balls = new ArrayList<>();
         AnimatorSet animation = null;
 
         public MyAnimationView(Context context) {

@@ -138,7 +138,7 @@ public class ClockBackService extends AccessibilityService {
     private static final String SPACE = " ";
 
     /** Mapping from integers to vibration patterns for haptic feedback. */
-    private static final SparseArray<long[]> sVibrationPatterns = new SparseArray<long[]>();
+    private static final SparseArray<long[]> sVibrationPatterns = new SparseArray<>();
     static {
         sVibrationPatterns.put(AccessibilityEvent.TYPE_VIEW_CLICKED, new long[] {
                 0L, 100L
@@ -167,7 +167,7 @@ public class ClockBackService extends AccessibilityService {
     }
 
     /** Mapping from integers to raw sound resource ids. */
-    private static SparseArray<Integer> sSoundsResourceIds = new SparseArray<Integer>();
+    private static SparseArray<Integer> sSoundsResourceIds = new SparseArray<>();
     static {
         sSoundsResourceIds.put(AccessibilityEvent.TYPE_VIEW_CLICKED,
                 R.raw.sound_view_clicked);
@@ -191,7 +191,7 @@ public class ClockBackService extends AccessibilityService {
     // Sound pool related member fields.
 
     /** Mapping from integers to earcon names - dynamically populated. */
-    private final SparseArray<String> mEarconNames = new SparseArray<String>();
+    private final SparseArray<String> mEarconNames = new SparseArray<>();
 
     // Auxiliary fields.
 
