@@ -84,7 +84,7 @@ public class List8 extends ListActivity {
                 R.drawable.sample_thumb_3, R.drawable.sample_thumb_4, R.drawable.sample_thumb_5,
                 R.drawable.sample_thumb_6, R.drawable.sample_thumb_7};
 
-        private ArrayList<Integer> mPhotos = new ArrayList<Integer>();
+        private ArrayList<Integer> mPhotos = new ArrayList<>();
         
         public PhotoAdapter(Context c) {
             mContext = c;

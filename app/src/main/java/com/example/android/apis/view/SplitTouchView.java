@@ -40,7 +40,7 @@ public class SplitTouchView extends Activity {
         setContentView(R.layout.split_touch_view);
         ListView list1 = (ListView) findViewById(R.id.list1);
         ListView list2 = (ListView) findViewById(R.id.list2);
-        ListAdapter adapter = new ArrayAdapter<String>(this,
+        ListAdapter adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, Cheeses.sCheeseStrings);
         list1.setAdapter(adapter);
         list2.setAdapter(adapter);
