@@ -401,7 +401,7 @@ public class LabelMaker {
     private int mU;
     private int mV;
     private int mLineHeight;
-    private ArrayList<Label> mLabels = new ArrayList<Label>();
+    private ArrayList<Label> mLabels = new ArrayList<>();
 
     private static final int STATE_NEW = 0;
     private static final int STATE_INITIALIZED = 1;

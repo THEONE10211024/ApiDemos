@@ -43,7 +43,7 @@ public class Animation3 extends Activity implements AdapterView.OnItemSelectedLi
         setContentView(R.layout.animation_3);
 
         Spinner s = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, INTERPOLATORS);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);

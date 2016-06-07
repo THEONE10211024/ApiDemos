@@ -138,7 +138,7 @@ public class ShadowCardDrag extends Activity {
     }
 
     private final ShapeDrawable mCardBackground = new ShapeDrawable();
-    private final ArrayList<Shape> mShapes = new ArrayList<Shape>();
+    private final ArrayList<Shape> mShapes = new ArrayList<>();
     private float mDensity;
     private View mCard;
 
