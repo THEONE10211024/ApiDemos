@@ -16,6 +16,8 @@
 
 package com.example.android.apis;
 
+import com.orhanobut.logger.Logger;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -41,17 +43,22 @@ public class ApiDemos extends ListActivity {
         
         Intent intent = getIntent();
         String path = intent.getStringExtra("com.example.android.apis.Path");
-        
         if (path == null) {
             path = "";
         }
-
+        Logger.d("apidemos oncraete path == "+path);
         setListAdapter(new SimpleAdapter(this, getData(path),
                 android.R.layout.simple_list_item_1, new String[] { "title" },
                 new int[] { android.R.id.text1 }));
         getListView().setTextFilterEnabled(true);
     }
 
+    /**
+     * 通过 Activity 中 Intent.CATEGORY_SAMPLE_CODE 标识，遍历系统中注册该标识的 Activity
+     * 根据路径地址，返回封装之后的结果
+     * @param prefix
+     * @return
+     */
     protected List<Map<String, Object>> getData(String prefix) {
         List<Map<String, Object>> myData = new ArrayList<Map<String, Object>>();
 
@@ -145,6 +152,7 @@ public class ApiDemos extends ListActivity {
 
         Intent intent = new Intent((Intent) map.get("intent"));
         intent.addCategory(Intent.CATEGORY_SAMPLE_CODE);
+        Logger.d("onListItemClick: intent="+intent);
         startActivity(intent);
     }
 }
