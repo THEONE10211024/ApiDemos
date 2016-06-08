@@ -70,7 +70,7 @@ public class PurgeableBitmap extends GraphicsActivity {
 
     private boolean detectIfPurgeableRequest() {
         PackageManager pm = getPackageManager();
-        CharSequence labelSeq = null;
+        CharSequence labelSeq;
         try {
           ActivityInfo info = pm.getActivityInfo(this.getComponentName(),
               PackageManager.GET_META_DATA);
