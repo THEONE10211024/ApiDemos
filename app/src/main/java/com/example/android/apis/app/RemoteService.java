@@ -125,9 +125,11 @@ public class RemoteService extends Service {
      */
     private final IRemoteService.Stub mBinder = new IRemoteService.Stub() {
         public void registerCallback(IRemoteServiceCallback cb) {
+            Logger.d("registerCallback",cb);
             if (cb != null) mCallbacks.register(cb);
         }
         public void unregisterCallback(IRemoteServiceCallback cb) {
+            Logger.d("unregisterCallback:",cb);
             if (cb != null) mCallbacks.unregister(cb);
         }
     };
@@ -270,6 +272,8 @@ public class RemoteService extends Service {
      */
  // BEGIN_INCLUDE(calling_a_service)
     public static class Binding extends Activity {
+
+        //IRemoteService.java 根据 IRemoteService.aidl 自动生成
         /** The primary interface we will be calling on the service. */
         IRemoteService mService = null;
         /** Another interface we use on the service. */
@@ -317,7 +321,7 @@ public class RemoteService extends Service {
                 mService = IRemoteService.Stub.asInterface(service);
                 mKillButton.setEnabled(true);
                 mCallbackText.setText("Attached.");
-
+                Logger.d("RemoteService,ServiceConnection,onServiceConnected");
                 // We want to monitor the service for as long as we are
                 // connected to it.
                 try {
@@ -336,7 +340,8 @@ public class RemoteService extends Service {
 
             public void onServiceDisconnected(ComponentName className) {
                 // This is called when the connection with the service has been
-                // unexpectedly disconnected -- that is, its process crashed.
+                // unexpectedly disconnected -- that is, its process ed.
+                Logger.d("onServiceDisconnected,className=%s",className);
                 mService = null;
                 mKillButton.setEnabled(false);
                 mCallbackText.setText("Disconnected.");
@@ -452,6 +457,7 @@ public class RemoteService extends Service {
              * to update the UI, we need to use a Handler to hop over there.
              */
             public void valueChanged(int value) {
+                Logger.d("IRemoteServiceCallback,valueChanged,value=%d",value);
                 mHandler.sendMessage(mHandler.obtainMessage(BUMP_MSG, value, 0));
             }
         };

@@ -16,6 +16,9 @@
 
 package com.example.android.apis.app;
 
+import com.example.android.apis.R;
+import com.orhanobut.logger.Logger;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -34,8 +37,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-
-import com.example.android.apis.R;
 
 /**
  * This is an example of implementing an application service that runs locally
@@ -68,7 +69,7 @@ public class ServiceStartArguments extends Service {
         
             String txt = arguments.getString("name");
             
-            Log.i("ServiceStartArguments", "Message: " + msg + ", "
+            Logger.d("ServiceStartArguments", "Message: " + msg + ", "
                     + arguments.getString("name"));
         
             if ((msg.arg2&Service.START_FLAG_REDELIVERY) == 0) {
@@ -124,14 +125,13 @@ public class ServiceStartArguments extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i("ServiceStartArguments",
-                "Starting #" + startId + ": " + intent.getExtras());
+        Logger.d("ServiceStartArguments", "Starting #" + startId + ": " + intent.getExtras());
         Message msg = mServiceHandler.obtainMessage();
         msg.arg1 = startId;
         msg.arg2 = flags;
         msg.obj = intent.getExtras();
         mServiceHandler.sendMessage(msg);
-        Log.i("ServiceStartArguments", "Sending: " + msg);
+        Logger.d("ServiceStartArguments", "Sending: " + msg);
         
         // For the start fail button, we will simulate the process dying
         // for some reason in onStartCommand().
