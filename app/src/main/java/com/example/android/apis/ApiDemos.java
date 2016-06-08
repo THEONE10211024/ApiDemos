@@ -46,7 +46,7 @@ public class ApiDemos extends ListActivity {
         if (path == null) {
             path = "";
         }
-        Logger.d("apidemos oncraete path == "+path);
+        Logger.d("apidemos onCreate path == "+path);
         setListAdapter(new SimpleAdapter(this, getData(path),
                 android.R.layout.simple_list_item_1, new String[] { "title" },
                 new int[] { android.R.id.text1 }));
@@ -140,6 +140,7 @@ public class ApiDemos extends ListActivity {
 
     protected void addItem(List<Map<String, Object>> data, String name, Intent intent) {
         Map<String, Object> temp = new HashMap<String, Object>();
+        Logger.d("name=%s,intent=%s",name,intent);
         temp.put("title", name);
         temp.put("intent", intent);
         data.add(temp);
