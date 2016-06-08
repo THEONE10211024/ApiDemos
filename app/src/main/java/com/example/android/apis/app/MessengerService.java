@@ -16,26 +16,26 @@
 
 package com.example.android.apis.app;
 
+import com.example.android.apis.R;
+import com.example.android.apis.app.RemoteService.Controller;
+import com.orhanobut.logger.Logger;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
-import com.example.android.apis.R;
-import com.example.android.apis.app.RemoteService.Controller;
 
 /**
  * This is an example of implementing an application service that uses the
@@ -84,6 +84,7 @@ public class MessengerService extends Service {
     class IncomingHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
+            Logger.d("IncomingHandler,msg.what=%d",msg.what);
             switch (msg.what) {
                 case MSG_REGISTER_CLIENT:
                     mClients.add(msg.replyTo);
@@ -93,10 +94,11 @@ public class MessengerService extends Service {
                     break;
                 case MSG_SET_VALUE:
                     mValue = msg.arg1;
+                    Logger.d("mValue=%d",mValue);
                     for (int i=mClients.size()-1; i>=0; i--) {
                         try {
                             mClients.get(i).send(Message.obtain(null,
-                                    MSG_SET_VALUE, mValue, 0));
+                                    MSG_SET_VALUE, mValue*2, 0));
                         } catch (RemoteException e) {
                             // The client is dead.  Remove it from the list;
                             // we are going through the list from back to front

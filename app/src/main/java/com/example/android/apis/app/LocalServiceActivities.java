@@ -17,6 +17,7 @@
 package com.example.android.apis.app;
 
 import com.example.android.apis.R;
+import com.orhanobut.logger.Logger;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -61,6 +62,7 @@ public class LocalServiceActivities {
                 // the service explicitly specifies our service component, because
                 // we want it running in our own process and don't want other
                 // applications to replace it.
+                Logger.d("mStartListener");
                 startService(new Intent(Controller.this,
                         LocalService.class));
             }
@@ -71,6 +73,7 @@ public class LocalServiceActivities {
                 // Cancel a previous call to startService().  Note that the
                 // service will not actually stop at this point if there are
                 // still bound clients.
+                Logger.d("mStopListener");
                 stopService(new Intent(Controller.this,
                         LocalService.class));
             }
@@ -100,6 +103,7 @@ public class LocalServiceActivities {
                 // interact with the service.  Because we have bound to a explicit
                 // service that we know is running in our own process, we can
                 // cast its IBinder to a concrete class and directly access it.
+                Logger.d("Binding ,mConnection");
                 mBoundService = ((LocalService.LocalBinder)service).getService();
                 
                 // Tell the user about this for our demo.
@@ -112,6 +116,7 @@ public class LocalServiceActivities {
                 // unexpectedly disconnected -- that is, its process crashed.
                 // Because it is running in our same process, we should never
                 // see this happen.
+                Logger.d("Binding ,onServiceDisconnected");
                 mBoundService = null;
                 Toast.makeText(Binding.this, R.string.local_service_disconnected,
                         Toast.LENGTH_SHORT).show();

@@ -16,6 +16,9 @@
 
 package com.example.android.apis.app;
 
+import com.example.android.apis.R;
+import com.orhanobut.logger.Logger;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -26,13 +29,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Process;
 import android.os.RemoteCallbackList;
-import android.util.Log;
+import android.os.RemoteException;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -41,7 +43,6 @@ import android.widget.Toast;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
-import com.example.android.apis.R;
 
 /**
  * This is an example of implementing an application service that runs in a
@@ -77,12 +78,13 @@ public class RemoteService extends Service {
         // While this service is running, it will continually increment a
         // number.  Send the first message that is used to perform the
         // increment.
+        Logger.d("RemoteService onCreate");
         mHandler.sendEmptyMessage(REPORT_MSG);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i("LocalService", "Received start id " + startId + ": " + intent);
+        Logger.d("RemoteService", "Received start id " + startId + ": " + intent);
         return START_NOT_STICKY;
     }
 
@@ -108,6 +110,7 @@ public class RemoteService extends Service {
         // Select the interface to return.  If your service only implements
         // a single interface, you can just return it here without checking
         // the Intent.
+        Logger.d("RemoteService" + "onBind:intent " + intent);
         if (IRemoteService.class.getName().equals(intent.getAction())) {
             return mBinder;
         }
