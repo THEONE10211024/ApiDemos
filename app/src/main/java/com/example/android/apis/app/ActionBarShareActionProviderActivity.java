@@ -99,7 +99,7 @@ public class ActionBarShareActionProviderActivity extends Activity {
             outputStream = openFileOutput(SHARED_FILE_NAME,
                     Context.MODE_WORLD_READABLE | Context.MODE_APPEND);
             byte[] buffer = new byte[1024];
-            int length = 0;
+            int length;
             try {
                 while ((length = inputStream.read(buffer)) > 0){
                     outputStream.write(buffer, 0, length);
@@ -111,12 +111,14 @@ public class ActionBarShareActionProviderActivity extends Activity {
             /* ignore */
         } finally {
             try {
-                inputStream.close();
+                if (inputStream != null)
+                    inputStream.close();
             } catch (IOException ioe) {
                /* ignore */
             }
             try {
-                outputStream.close();
+                if (outputStream != null)
+                    outputStream.close();
             } catch (IOException ioe) {
                /* ignore */
             }

@@ -113,7 +113,7 @@ public class TaskBackService extends AccessibilityService implements OnInitListe
         CharSequence taskLabel = labelNode.getText();
         final boolean isComplete = completeNode.isChecked();
 
-        String completeStr = null;
+        String completeStr;
         if (isComplete) {
             completeStr = getString(R.string.task_complete);
         } else {
