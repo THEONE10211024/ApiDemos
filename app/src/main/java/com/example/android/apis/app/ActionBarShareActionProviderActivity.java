@@ -111,12 +111,14 @@ public class ActionBarShareActionProviderActivity extends Activity {
             /* ignore */
         } finally {
             try {
-                inputStream.close();
+                if (inputStream != null)
+                    inputStream.close();
             } catch (IOException ioe) {
                /* ignore */
             }
             try {
-                outputStream.close();
+                if (outputStream != null)
+                    outputStream.close();
             } catch (IOException ioe) {
                /* ignore */
             }
