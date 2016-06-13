@@ -95,8 +95,8 @@ public class GLShape {
 
 	public M4						mTransform;
 	public M4						mAnimateTransform;
-	protected ArrayList<GLFace>		mFaceList = new ArrayList<GLFace>();
-	protected ArrayList<GLVertex>	mVertexList = new ArrayList<GLVertex>();
-	protected ArrayList<Integer>	mIndexList = new ArrayList<Integer>();	// make more efficient?
+	protected ArrayList<GLFace>		mFaceList = new ArrayList<>();
+	protected ArrayList<GLVertex>	mVertexList = new ArrayList<>();
+	protected ArrayList<Integer>	mIndexList = new ArrayList<>();	// make more efficient?
 	protected GLWorld mWorld;
 }

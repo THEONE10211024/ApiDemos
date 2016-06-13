@@ -33,7 +33,7 @@ public class List1 extends ListActivity {
 
         // Use an existing ListAdapter that will map an array
         // of strings to TextViews
-        setListAdapter(new ArrayAdapter<String>(this,
+        setListAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, mStrings));
         getListView().setTextFilterEnabled(true);
     }

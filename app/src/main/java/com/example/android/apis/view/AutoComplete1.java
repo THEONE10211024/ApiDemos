@@ -30,8 +30,8 @@ public class AutoComplete1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.autocomplete_1);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+				android.R.layout.simple_dropdown_item_1line, COUNTRIES);
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.edit);
         textView.setAdapter(adapter);
     }

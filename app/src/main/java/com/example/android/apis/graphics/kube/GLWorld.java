@@ -87,8 +87,8 @@ public class GLWorld {
     	return x/65536.0f;
     }
 
-	private ArrayList<GLShape>	mShapeList = new ArrayList<GLShape>();	
-	private ArrayList<GLVertex>	mVertexList = new ArrayList<GLVertex>();
+	private ArrayList<GLShape>	mShapeList = new ArrayList<>();	
+	private ArrayList<GLVertex>	mVertexList = new ArrayList<>();
 	
 	private int mIndexCount = 0;
 

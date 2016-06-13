@@ -49,7 +49,7 @@ public class SearchViewFilterMode extends Activity implements SearchView.OnQuery
 
         mSearchView = (SearchView) findViewById(R.id.search_view);
         mListView = (ListView) findViewById(R.id.list_view);
-        mListView.setAdapter(mAdapter = new ArrayAdapter<String>(this,
+        mListView.setAdapter(mAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
                 mStrings));
         mListView.setTextFilterEnabled(true);

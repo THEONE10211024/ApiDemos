@@ -47,7 +47,7 @@ public class SoftInputModes extends Activity {
         setContentView(R.layout.soft_input_modes);
         
         mResizeMode = (Spinner)findViewById(R.id.resize_mode);
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, mResizeModeLabels);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mResizeMode.setAdapter(adapter);

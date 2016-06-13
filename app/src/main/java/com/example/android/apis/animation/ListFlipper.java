@@ -74,10 +74,10 @@ public class ListFlipper extends Activity {
         mFrenchList = (ListView) findViewById(R.id.list_fr);
 
         // Prepare the ListView
-        final ArrayAdapter<String> adapterEn = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> adapterEn = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, LIST_STRINGS_EN);
         // Prepare the ListView
-        final ArrayAdapter<String> adapterFr = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> adapterFr = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, LIST_STRINGS_FR);
 
         mEnglishList.setAdapter(adapterEn);

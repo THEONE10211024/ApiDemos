@@ -84,8 +84,8 @@ public class GameView extends View {
         super(context, attrs);
 
         mRandom = new Random();
-        mBullets = new ArrayList<Bullet>();
-        mObstacles = new ArrayList<Obstacle>();
+        mBullets = new ArrayList<>();
+        mObstacles = new ArrayList<>();
 
         setFocusable(true);
         setFocusableInTouchMode(true);

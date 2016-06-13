@@ -289,7 +289,7 @@ public class KeyStoreUsage extends Activity {
 
         @Override
         protected void onPostExecute(Enumeration<String> result) {
-            List<String> aliases = new ArrayList<String>();
+            List<String> aliases = new ArrayList<>();
             while (result.hasMoreElements()) {
                 aliases.add(result.nextElement());
             }

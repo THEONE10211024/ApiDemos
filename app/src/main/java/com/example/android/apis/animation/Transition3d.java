@@ -61,7 +61,7 @@ public class Transition3d extends Activity implements
         mContainer = (ViewGroup) findViewById(R.id.container);
 
         // Prepare the ListView
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, PHOTOS_NAMES);
 
         mPhotosList.setAdapter(adapter);
