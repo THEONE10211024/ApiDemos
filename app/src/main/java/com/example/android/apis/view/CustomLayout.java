@@ -215,9 +215,9 @@ public class CustomLayout extends ViewGroup {
          */
         public int gravity = Gravity.TOP | Gravity.START;
 
-        public static int POSITION_MIDDLE = 0;
-        public static int POSITION_LEFT = 1;
-        public static int POSITION_RIGHT = 2;
+        public static final int POSITION_MIDDLE = 0;
+        public static final int POSITION_LEFT = 1;
+        public static final int POSITION_RIGHT = 2;
 
         public int position = POSITION_MIDDLE;
 

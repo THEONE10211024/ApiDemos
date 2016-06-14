@@ -39,7 +39,7 @@ public class List16 extends ListActivity {
         ListView lv = getListView();
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         lv.setMultiChoiceModeListener(new ModeCallback());
-        setListAdapter(new ArrayAdapter<String>(this,
+        setListAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_activated_1, Cheeses.sCheeseStrings));
     }
     

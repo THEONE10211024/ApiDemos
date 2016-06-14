@@ -39,7 +39,7 @@ public class List12 extends ListActivity implements OnClickListener, OnKeyListen
     
     private ArrayAdapter<String> mAdapter;
     
-    private ArrayList<String> mStrings = new ArrayList<String>();
+    private ArrayList<String> mStrings = new ArrayList<>();
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class List12 extends ListActivity implements OnClickListener, OnKeyListen
         
         setContentView(R.layout.list_12);
         
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mStrings);
+        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mStrings);
         
         setListAdapter(mAdapter);
         

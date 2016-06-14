@@ -53,7 +53,7 @@ public class MessengerService extends Service {
     /** For showing and hiding our notification. */
     NotificationManager mNM;
     /** Keeps track of all current registered clients. */
-    ArrayList<Messenger> mClients = new ArrayList<Messenger>();
+    ArrayList<Messenger> mClients = new ArrayList<>();
     /** Holds last value set by a client. */
     int mValue = 0;
     

@@ -111,7 +111,7 @@ public class CustomEvaluator extends Activity {
 
     public class MyAnimationView extends View implements ValueAnimator.AnimatorUpdateListener {
 
-        public final ArrayList<ShapeHolder> balls = new ArrayList<ShapeHolder>();
+        public final ArrayList<ShapeHolder> balls = new ArrayList<>();
         ValueAnimator bounceAnim = null;
         ShapeHolder ball = null;
         BallXYHolder ballHolder = null;

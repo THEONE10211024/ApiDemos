@@ -105,7 +105,7 @@ public class AnimatorEvents extends Activity {
     public class MyAnimationView extends View implements Animator.AnimatorListener,
     ValueAnimator.AnimatorUpdateListener {
 
-        public final ArrayList<ShapeHolder> balls = new ArrayList<ShapeHolder>();
+        public final ArrayList<ShapeHolder> balls = new ArrayList<>();
         Animator animation;
         ShapeHolder ball = null;
         boolean endImmediately = false;

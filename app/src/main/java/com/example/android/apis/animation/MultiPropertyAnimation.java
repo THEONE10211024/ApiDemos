@@ -69,7 +69,7 @@ public class MultiPropertyAnimation extends Activity {
 
         private static final float BALL_SIZE = 100f;
 
-        public final ArrayList<ShapeHolder> balls = new ArrayList<ShapeHolder>();
+        public final ArrayList<ShapeHolder> balls = new ArrayList<>();
         AnimatorSet animation = null;
         Animator bounceAnim = null;
         ShapeHolder ball = null;

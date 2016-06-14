@@ -233,13 +233,13 @@ public class LoaderCustom extends Activity {
                     PackageManager.GET_UNINSTALLED_PACKAGES |
                     PackageManager.GET_DISABLED_COMPONENTS);
             if (apps == null) {
-                apps = new ArrayList<ApplicationInfo>();
+                apps = new ArrayList<>();
             }
 
             final Context context = getContext();
 
             // Create corresponding array of entries and load their labels.
-            List<AppEntry> entries = new ArrayList<AppEntry>(apps.size());
+            List<AppEntry> entries = new ArrayList<>(apps.size());
             for (int i=0; i<apps.size(); i++) {
                 AppEntry entry = new AppEntry(this, apps.get(i));
                 entry.loadLabel(context);

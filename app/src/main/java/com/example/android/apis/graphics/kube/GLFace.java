@@ -89,6 +89,6 @@ public class GLFace {
 		}
 	}
 	
-	private ArrayList<GLVertex> mVertexList = new ArrayList<GLVertex>();
+	private ArrayList<GLVertex> mVertexList = new ArrayList<>();
 	private GLColor mColor;
 }

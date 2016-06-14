@@ -47,7 +47,7 @@ public class IsolatedService extends Service {
      * that it can be accessed more efficiently from inner classes.
      */
     final RemoteCallbackList<IRemoteServiceCallback> mCallbacks
-            = new RemoteCallbackList<IRemoteServiceCallback>();
+            = new RemoteCallbackList<>();
     
     int mValue = 0;
     

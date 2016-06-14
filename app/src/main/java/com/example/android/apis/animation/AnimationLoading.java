@@ -69,7 +69,7 @@ public class AnimationLoading extends Activity {
 
         private static final float BALL_SIZE = 100f;
 
-        public final ArrayList<ShapeHolder> balls = new ArrayList<ShapeHolder>();
+        public final ArrayList<ShapeHolder> balls = new ArrayList<>();
         Animator animation = null;
 
         public MyAnimationView(Context context) {

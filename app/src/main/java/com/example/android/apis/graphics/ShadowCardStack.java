@@ -55,12 +55,12 @@ public class ShadowCardStack extends Activity {
         final float Y = Y_SHIFT_DP * density;
         final float Z = Z_LIFT_DP * density;
 
-        ArrayList<Animator> towardAnimators = new ArrayList<Animator>();
-        ArrayList<Animator> expandAnimators = new ArrayList<Animator>();
-        ArrayList<Animator> moveAwayAnimators = new ArrayList<Animator>();
-        ArrayList<Animator> moveBackAnimators = new ArrayList<Animator>();
-        ArrayList<Animator> awayAnimators = new ArrayList<Animator>();
-        ArrayList<Animator> collapseAnimators = new ArrayList<Animator>();
+        ArrayList<Animator> towardAnimators = new ArrayList<>();
+        ArrayList<Animator> expandAnimators = new ArrayList<>();
+        ArrayList<Animator> moveAwayAnimators = new ArrayList<>();
+        ArrayList<Animator> moveBackAnimators = new ArrayList<>();
+        ArrayList<Animator> awayAnimators = new ArrayList<>();
+        ArrayList<Animator> collapseAnimators = new ArrayList<>();
 
         final int max = cardParent.getChildCount();
         for (int i = 0; i < max; i++) {

@@ -31,7 +31,7 @@ public class LayoutAnimation2 extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new ArrayAdapter<String>(this,
+        setListAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, mStrings));
 
         AnimationSet set = new AnimationSet(true);

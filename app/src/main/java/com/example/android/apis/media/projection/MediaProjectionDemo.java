@@ -80,7 +80,7 @@ public class MediaProjectionDemo extends Activity {
         mProjectionManager =
             (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
 
-        ArrayAdapter<Resolution> arrayAdapter = new ArrayAdapter<Resolution>(
+        ArrayAdapter<Resolution> arrayAdapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, RESOLUTIONS);
         Spinner s = (Spinner) findViewById(R.id.spinner);
         s.setAdapter(arrayAdapter);

@@ -28,7 +28,7 @@ public class LayoutAnimation3 extends ListActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.layout_animation_3);
-        setListAdapter(new ArrayAdapter<String>(this,
+        setListAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, mStrings));
     }
 

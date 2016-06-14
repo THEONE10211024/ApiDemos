@@ -95,7 +95,7 @@ public class FragmentLayout extends Activity {
             super.onActivityCreated(savedInstanceState);
 
             // Populate list with our static array of titles.
-            setListAdapter(new ArrayAdapter<String>(getActivity(),
+            setListAdapter(new ArrayAdapter<>(getActivity(),
                     android.R.layout.simple_list_item_activated_1, Shakespeare.TITLES));
 
             // Check to see if we have a frame in which to embed the details

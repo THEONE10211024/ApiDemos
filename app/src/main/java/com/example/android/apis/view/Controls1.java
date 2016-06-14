@@ -42,7 +42,7 @@ public class Controls1 extends Activity {
         disabledButton.setEnabled(false);
 
         Spinner s1 = (Spinner) findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, mStrings);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s1.setAdapter(adapter);

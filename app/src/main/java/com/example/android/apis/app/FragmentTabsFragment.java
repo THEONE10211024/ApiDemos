@@ -89,7 +89,7 @@ public class FragmentTabsFragment extends Fragment {
         private final Context mContext;
         private final FragmentManager mManager;
         private final int mContainerId;
-        private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
+        private final ArrayList<TabInfo> mTabs = new ArrayList<>();
         private TabHost mTabHost;
         private TabInfo mLastTab;
         private boolean mInitialized;

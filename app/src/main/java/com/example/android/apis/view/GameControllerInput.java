@@ -69,7 +69,7 @@ public class GameControllerInput extends Activity
 
         mInputManager = (InputManager)getSystemService(Context.INPUT_SERVICE);
 
-        mInputDeviceStates = new SparseArray<InputDeviceState>();
+        mInputDeviceStates = new SparseArray<>();
         mSummaryAdapter = new SummaryAdapter(this, getResources());
 
         setContentView(R.layout.game_controller_input);
@@ -338,8 +338,8 @@ public class GameControllerInput extends Activity
         private final Context mContext;
         private final Resources mResources;
 
-        private final SparseArray<Item> mDataItems = new SparseArray<Item>();
-        private final ArrayList<Item> mVisibleItems = new ArrayList<Item>();
+        private final SparseArray<Item> mDataItems = new SparseArray<>();
+        private final ArrayList<Item> mVisibleItems = new ArrayList<>();
 
         private final Heading mDeviceHeading;
         private final TextColumn mDeviceNameTextColumn;

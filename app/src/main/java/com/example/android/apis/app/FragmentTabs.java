@@ -41,19 +41,19 @@ public class FragmentTabs extends Activity {
 
         bar.addTab(bar.newTab()
                 .setText("Simple")
-                .setTabListener(new TabListener<FragmentStack.CountingFragment>(
+                .setTabListener(new TabListener<>(
                         this, "simple", FragmentStack.CountingFragment.class)));
         bar.addTab(bar.newTab()
                 .setText("Contacts")
-                .setTabListener(new TabListener<LoaderCursor.CursorLoaderListFragment>(
+                .setTabListener(new TabListener<>(
                         this, "contacts", LoaderCursor.CursorLoaderListFragment.class)));
         bar.addTab(bar.newTab()
                 .setText("Apps")
-                .setTabListener(new TabListener<LoaderCustom.AppListFragment>(
+                .setTabListener(new TabListener<>(
                         this, "apps", LoaderCustom.AppListFragment.class)));
         bar.addTab(bar.newTab()
                 .setText("Throttle")
-                .setTabListener(new TabListener<LoaderThrottle.ThrottledLoaderListFragment>(
+                .setTabListener(new TabListener<>(
                         this, "throttle", LoaderThrottle.ThrottledLoaderListFragment.class)));
 
         if (savedInstanceState != null) {
