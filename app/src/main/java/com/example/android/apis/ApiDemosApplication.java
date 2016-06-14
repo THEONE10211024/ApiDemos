@@ -16,6 +16,8 @@
 
 package com.example.android.apis;
 
+import com.orhanobut.logger.Logger;
+
 import android.app.Application;
 
 /**
@@ -32,5 +34,8 @@ import android.app.Application;
 public class ApiDemosApplication extends Application {
     @Override
     public void onCreate() {
+        super.onCreate();
+        //初始化日志打印工具类
+        Logger.init("ApiDemos");
     }
 }

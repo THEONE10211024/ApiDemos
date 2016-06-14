@@ -1,7 +1,7 @@
 package com.example.android.apis.app;
 
 import com.example.android.apis.R;
-import com.example.android.apis.app.LocalServiceActivities.Binding;
+import com.orhanobut.logger.Logger;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -70,6 +70,7 @@ public class MessengerServiceActivities {
                 // interact with the service.  We are communicating with our
                 // service through an IDL interface, so get a client-side
                 // representation of that from the raw service object.
+                Logger.d("MessengerService,onServiceConnected,service=%s",service);
                 mService = new Messenger(service);
                 mCallbackText.setText("Attached.");
 
@@ -83,7 +84,7 @@ public class MessengerServiceActivities {
                     
                     // Give it some value as an example.
                     msg = Message.obtain(null,
-                            MessengerService.MSG_SET_VALUE, this.hashCode(), 0);
+                            MessengerService.MSG_SET_VALUE, 123, 0);
                     mService.send(msg);
                 } catch (RemoteException e) {
                     // In this case the service has crashed before we could even

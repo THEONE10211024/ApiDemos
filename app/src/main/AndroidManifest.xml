@@ -52,6 +52,7 @@
             android:label="@string/activity_sample_code"
             android:icon="@drawable/app_sample_code"
             android:hardwareAccelerated="true"
+            android:debuggable="true"
             android:supportsRtl="true">
 
         <!-- This is how we can request a library but still allow the app

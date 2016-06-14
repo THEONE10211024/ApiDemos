@@ -16,6 +16,9 @@
 
 package com.example.android.apis.app;
 
+import com.example.android.apis.R;
+import com.orhanobut.logger.Logger;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -34,7 +37,6 @@ import java.lang.reflect.Method;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
-import com.example.android.apis.R;
 
 /**
  * This is an example of implementing an application service that can
@@ -47,7 +49,8 @@ import com.example.android.apis.R;
 public class ForegroundService extends Service {
     static final String ACTION_FOREGROUND = "com.example.android.apis.FOREGROUND";
     static final String ACTION_BACKGROUND = "com.example.android.apis.BACKGROUND";
-    
+    //为了兼容API 5x以下版本，使用反射方法获取 mStartForeground,mStopForeground。对5.0以下对版本，使用mSetForeground兼容
+    //通过反射兼容SDK的思路值得借鉴
  // BEGIN_INCLUDE(foreground_compatibility)
     private static final Class<?>[] mSetForegroundSignature = new Class[] {
         boolean.class};
@@ -67,6 +70,7 @@ public class ForegroundService extends Service {
     void invokeMethod(Method method, Object[] args) {
         try {
             method.invoke(this, args);
+            Logger.d("method=%s,args=%s",method,args);
         } catch (InvocationTargetException e) {
             // Should not happen.
             Log.w("ApiDemos", "Unable to invoke method", e);
