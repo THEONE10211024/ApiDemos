@@ -36,7 +36,7 @@ ApiDemo非常全面的介绍了Android开发中常见的Api使用方式。比如
 ##### 主要介绍了Linkify、LogTextBox、Marquee的使用方式。
 ![p10](https://github.com/THEONE10211024/ApiDemos/blob/master/pic/Screenshot_2015-06-09-22-31-29.jpeg)
 #### Views
-#####Android原生View的介绍，包括常见的动画、拖拽等操作，常见的Widget的使用方法等。在Android的基础开发中，90%都在和各种各样的View打交道，因此学会这一章所有控件的使用，Android开发基本就入门了！
+##### Android原生View的介绍，包括常见的动画、拖拽等操作，常见的Widget的使用方法等。在Android的基础开发中，90%都在和各种各样的View打交道，因此学会这一章所有控件的使用，Android开发基本就入门了！
 ![p11](https://github.com/THEONE10211024/ApiDemos/blob/master/pic/Screenshot_2015-06-09-22-31-54.jpeg)
 ### 总结
 ##### read the fuck source code！
